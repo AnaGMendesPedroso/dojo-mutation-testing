@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "9c39e6b8-81cc-4a4b-be09-963f68a9e2d8",
+		"name": "dojo-qaday",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Hello World Spring",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro de vendedor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"nome\":\"Bar do seu Zé\",\n   \"telefone\":\"+5567987765445\",\n   \"setor\": \"BARES\",\n   \"endereco\":{\n      \"logradouro\":\"Rua da Paz\",\n      \"numero\":123,\n      \"bairro\":\"vila boa\",\n      \"cidade\":\"São Jão\",\n      \"estado\":\"MS\",\n      \"cep\":\"79876543\",\n      \"complemento\":\"-\"\n   }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vendedor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vendedor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastro de cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"nome\":\"Moisés Maranhães\",\n   \"telefone\":\"+5567988776655\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cliente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar pedido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vendedor\": {\n        \"nome\": \"Bar do seu Zé\",\n        \"telefone\": \"+5567987765445\",\n        \"setor\": \"BARES\",\n        \"endereco\": {\n            \"logradouro\": \"Rua da Paz\",\n            \"numero\": 123,\n            \"bairro\": \"vila boa\",\n            \"cidade\": \"São Jão\",\n            \"estado\": \"MS\",\n            \"cep\": \"79876543\",\n            \"complemento\": \"-\"\n        }\n    },\n    \"cliente\": {\n        \"nome\": \"Moisés Maranhães\",\n        \"telefone\": \"+5567988776655\"\n    },\n    \"valorTotal\": 11289.21,\n    \"itemPedido\":{\n        \"quantidade\": 2,\n        \"produto\":{\n            \"nome\": \"Corona\",\n            \"precoUnitario\": 8.99,\n            \"fornecedor\": \"AMBEV\",\n            \"categoria\": \"BEBIDAS\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pedido",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedido"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar produto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Corona\",\n    \"precoUnitario\": 8.99,\n    \"fornecedor\": \"AMBEV\",\n    \"categoria\": \"BEBIDAS\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produto"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
