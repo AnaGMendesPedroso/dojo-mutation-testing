@@ -1,20 +1,25 @@
 package dojo.qaday.demo.mutationtest.model.pedido;
 
-import dojo.qaday.demo.mutationtest.model.cliente.DTOCliente;
-import dojo.qaday.demo.mutationtest.model.vendedor.DTOVendedor;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-import java.math.BigDecimal;
-
 public record DTOPedido(
-        @NotNull @Valid
-        DTOVendedor vendedor,
-        @NotNull @Valid
-        DTOCliente cliente,
-        @DecimalMin(value = "50.0")
-        BigDecimal valorTotal,
+        @NotBlank
+        String nomeFantasiaVendedor,
+        @NotNull
+        Setor setorVendasVendedor,
+        @NotBlank
+        String telefoneVendedor,
+        @NotBlank
+        String enderecoVendedor,
+        @NotBlank
+        String nomeCliente,
+
+        String telefoneCliente,
+        @DecimalMin(value = "50.0", message = "O pedido deve ter um valor total mínimo de R$50,00.")
+        double valorTotal,
         @NotNull @Valid
         DTOItemPedido itemPedido) {
 }

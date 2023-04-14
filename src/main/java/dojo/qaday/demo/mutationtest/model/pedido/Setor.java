@@ -1,4 +1,4 @@
-package dojo.qaday.demo.mutationtest.model.vendedor;
+package dojo.qaday.demo.mutationtest.model.pedido;
 
 public enum Setor {
     ACADEMIAS_DESPORTIVAS,

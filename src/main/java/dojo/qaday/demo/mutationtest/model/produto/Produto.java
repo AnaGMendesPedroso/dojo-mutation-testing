@@ -1,11 +1,11 @@
 package dojo.qaday.demo.mutationtest.model.produto;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 import java.math.BigDecimal;
 @Embeddable
@@ -22,12 +22,12 @@ public class Produto {
     @Enumerated(EnumType.STRING)
     private Fornecedor fornecedor;
 
-    private BigDecimal preco;
+    private double preco;
 
     public Produto(DTOProduto produto) {
         this.nomeProduto = produto.nomeProduto();
         this.categoria = produto.categoria();
         this.fornecedor = produto.fornecedor();
-        this.preco = produto.precoUnitario();
+        this.preco = produto.preco();
     }
 }

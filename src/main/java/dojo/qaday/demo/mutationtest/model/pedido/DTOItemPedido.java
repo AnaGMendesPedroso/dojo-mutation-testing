@@ -9,6 +9,10 @@ import jakarta.validation.constraints.NotNull;
 public record DTOItemPedido(
         @NotNull @Valid
         DTOProduto produto,
-        @Min(1)
+        @Min(value= 1, message = "Ao menos 1 unidade do produto deve ser adicionada.")
         int quantidade) {
+
+        public DTOItemPedido(ItemPedido itemPedido) {
+                this(new DTOProduto(itemPedido.getProduto()),itemPedido.getQuantidade());
+        }
 }
